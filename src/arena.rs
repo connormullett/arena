@@ -78,6 +78,19 @@ where
         None
     }
 
+    pub fn get_parent(&self, index: usize) -> Option<&Node<T, K>> {
+        let node = self.get(index);
+
+        if let Some(node) = node {
+            match node.parent() {
+                Some(index) => self.get(index),
+                None => None,
+            }
+        } else {
+            None
+        }
+    }
+
     pub fn is_empty(&self) -> bool {
         self.nodes.len() == 0
     }
