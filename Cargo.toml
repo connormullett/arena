@@ -2,7 +2,12 @@
 name = "arena"
 version = "0.1.0"
 edition = "2018"
+description = "Arena allocated graph implementation"
+readme = "README.md"
+license-file = "LICENSE.txt"
+repository = "https://github.com/connormullett/arena/"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+keywords = ["graph", "arena-allocation", "tree"]
+categories = ["data-structures", "memory-management"]
 
 [dependencies]

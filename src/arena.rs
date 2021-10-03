@@ -1,25 +1,19 @@
 use crate::Node;
 
-#[derive(Default)]
-pub struct Arena<T, K>
-where
-    T: Default,
-    K: Default,
-{
+pub struct Arena<T, K> {
+    root: Option<usize>,
     nodes: Vec<Node<T, K>>,
 }
 
 impl<T, K> Arena<T, K>
 where
-    K: PartialEq + Default,
-    T: Default,
+    K: PartialEq,
 {
-    pub fn new_default() -> Self {
-        Self::default()
-    }
-
     pub fn new() -> Self {
-        Self { nodes: vec![] }
+        Self {
+            nodes: vec![],
+            root: None,
+        }
     }
 
     pub fn insert(&mut self, data: T, key: K) -> usize {
@@ -28,6 +22,10 @@ where
         self.nodes.push(Node::new(data, key));
 
         next_index
+    }
+
+    pub fn root(&self) -> Option<usize> {
+        self.root
     }
 
     pub fn find_inner(&self, key: K) -> Option<&T> {

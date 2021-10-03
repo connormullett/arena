@@ -22,6 +22,10 @@ impl<T, K> Node<T, K> {
         }
     }
 
+    pub fn inner_mut(&mut self) -> &mut T {
+        &mut self.data
+    }
+
     pub fn parent(&self) -> Option<usize> {
         self.parent
     }
