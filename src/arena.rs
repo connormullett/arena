@@ -29,6 +29,10 @@ where
         self.root
     }
 
+    pub fn nodes(&self) -> &Vec<Node<T, K>> {
+        &self.nodes
+    }
+
     pub fn find_inner(&self, key: K) -> Option<&T> {
         for node in self.nodes.iter() {
             if node.key == key {
