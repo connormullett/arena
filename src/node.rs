@@ -31,6 +31,10 @@ impl<T, K> Node<T, K> {
         self.parent
     }
 
+    pub fn set_parent(&mut self, new_parent: Option<usize>) {
+        self.parent = new_parent
+    }
+
     pub fn previous_sibling(&self) -> Option<usize> {
         self.previous_sibling
     }
