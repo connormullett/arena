@@ -29,6 +29,10 @@ where
         self.root
     }
 
+    pub fn set_root(&mut self, new_root: Option<usize>) {
+        self.root = new_root;
+    }
+
     pub fn nodes(&self) -> &Vec<Node<T, K>> {
         &self.nodes
     }
