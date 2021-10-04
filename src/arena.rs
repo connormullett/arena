@@ -17,10 +17,12 @@ where
         }
     }
 
-    pub fn insert(&mut self, data: T, key: K) -> usize {
+    pub fn insert(&mut self, data: T, key: K, parent: Option<usize>) -> usize {
         let next_index = self.nodes.len();
 
-        self.nodes.push(Node::new(data, key));
+        let mut node = Node::new(data, key);
+        node.set_parent(parent);
+        self.nodes.push(node);
 
         next_index
     }
