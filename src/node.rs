@@ -1,3 +1,4 @@
+#[derive(Debug, Clone)]
 pub struct Node<T, K> {
     parent: Option<usize>,
     previous_sibling: Option<usize>,
