@@ -1,6 +1,8 @@
 use crate::Node;
 
-#[derive(Debug, Clone)]
+use serde::{Deserialize, Serialize};
+
+#[derive(Debug, Clone, Deserialize, Serialize)]
 pub struct Arena<T, K> {
     root: Option<usize>,
     nodes: Vec<Node<T, K>>,
